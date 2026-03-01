@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(composer require:*)",
+      "Bash(php artisan:*)",
+      "Bash(npm install @clerk/nextjs @tanstack/react-query axios recharts lucide-react zustand)",
+      "Bash(npx shadcn@latest init --yes --defaults)",
+      "Bash(npx shadcn@latest add button card input badge progress dialog label separator avatar dropdown-menu sheet tooltip --yes)",
+      "Bash(ls /Users/martinbalaz/www/react-native-projects/life-app/app/\\\\\\(tabs\\\\\\)/beliefs/)",
+      "Bash(ls /Users/martinbalaz/www/react-native-projects/life-app/app/\\\\\\(app\\\\\\)/)",
+      "Bash(npm install date-fns --save)",
+      "Bash(npx shadcn@latest add textarea slider --yes)",
+      "Bash(ls /Users/martinbalaz/www/react-native-projects/life-app/app/\\\\\\(app\\\\\\)/\\\\\\(tabs\\\\\\)/experiments/)",
+      "Bash(ls /Users/martinbalaz/www/react-native-projects/life-app/app/\\\\\\(app\\\\\\)/experiments/)",
+      "Bash(ls /Users/martinbalaz/www/react-native-projects/life-app/app/\\\\\\(app\\\\\\)/quests/)",
+      "Bash(ls /Users/martinbalaz/www/react-native-projects/life-app/app/\\\\\\(app\\\\\\)/\\\\\\(tabs\\\\\\)/quests/)",
+      "Bash(npx tsc --noEmit)"
+    ]
+  }
+}
