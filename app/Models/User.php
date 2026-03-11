@@ -67,4 +67,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(TinyExperiment::class);
     }
+
+    public function habits()
+    {
+        return $this->hasMany(Habit::class);
+    }
 }

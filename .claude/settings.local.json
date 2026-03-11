@@ -14,7 +14,9 @@
       "Bash(ls /Users/martinbalaz/www/react-native-projects/life-app/app/\\\\\\(app\\\\\\)/experiments/)",
       "Bash(ls /Users/martinbalaz/www/react-native-projects/life-app/app/\\\\\\(app\\\\\\)/quests/)",
       "Bash(ls /Users/martinbalaz/www/react-native-projects/life-app/app/\\\\\\(app\\\\\\)/\\\\\\(tabs\\\\\\)/quests/)",
-      "Bash(npx tsc --noEmit)"
+      "Bash(npx tsc --noEmit)",
+      "Bash(tail -5 \"/Users/martinbalaz/www/next_projects/life-app/app/\\(app\\)/experiments/create/page.tsx\")",
+      "Bash(tail -5 \"/Users/martinbalaz/www/next_projects/life-app/app/\\(app\\)/quests/create/page.tsx\")"
     ]
   }
 }

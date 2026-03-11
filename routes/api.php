@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\AssessmentController;
 use App\Http\Controllers\Api\BeliefController;
 use App\Http\Controllers\Api\ExperimentController;
+use App\Http\Controllers\Api\HabitController;
 use App\Http\Controllers\Api\QuestController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Middleware\ClerkAuth;
@@ -27,6 +28,17 @@ Route::middleware(ClerkAuth::class)->group(function () {
     Route::get('/beliefs/weekly-stats', [BeliefController::class, 'weeklyStats']);
     Route::patch('/beliefs/{id}/reflection', [BeliefController::class, 'updateReflection']);
     Route::apiResource('beliefs', BeliefController::class)->except(['update']);
+
+    // Habit routes
+    Route::get('/habits/today', [HabitController::class, 'today']);
+    Route::get('/habits/summary', [HabitController::class, 'summary']);
+    Route::post('/habits/{id}/archive', [HabitController::class, 'archive']);
+    Route::get('/habits/{id}/stats', [HabitController::class, 'stats']);
+    Route::get('/habits/{id}/entries', [HabitController::class, 'getEntries']);
+    Route::post('/habits/{id}/entries', [HabitController::class, 'storeEntry']);
+    Route::patch('/habits/{id}/entries/{entryId}', [HabitController::class, 'updateEntry']);
+    Route::apiResource('habits', HabitController::class)->except(['update']);
+    Route::patch('/habits/{id}', [HabitController::class, 'update']);
 
     // Experiment routes
     Route::get('/experiments/suggestions', [ExperimentController::class, 'suggestions']);
