@@ -5,6 +5,8 @@ use App\Http\Controllers\Api\BeliefController;
 use App\Http\Controllers\Api\ExperimentController;
 use App\Http\Controllers\Api\HabitController;
 use App\Http\Controllers\Api\QuestController;
+use App\Http\Controllers\Api\TodoController;
+use App\Http\Controllers\Api\TodoListController;
 use App\Http\Controllers\Api\UserController;
 use App\Http\Middleware\ClerkAuth;
 use Illuminate\Support\Facades\Route;
@@ -39,6 +41,20 @@ Route::middleware(ClerkAuth::class)->group(function () {
     Route::patch('/habits/{id}/entries/{entryId}', [HabitController::class, 'updateEntry']);
     Route::apiResource('habits', HabitController::class)->except(['update']);
     Route::patch('/habits/{id}', [HabitController::class, 'update']);
+
+    // Todo routes
+    Route::get('/todos/today', [TodoController::class, 'today']);
+    Route::get('/todos/summary', [TodoController::class, 'summary']);
+    Route::post('/todos/{id}/complete', [TodoController::class, 'complete']);
+    Route::post('/todos/{id}/incomplete', [TodoController::class, 'incomplete']);
+    Route::get('/todos/{id}/items', [TodoController::class, 'getItems']);
+    Route::post('/todos/{id}/items', [TodoController::class, 'storeItem']);
+    Route::patch('/todos/{id}/items/{itemId}', [TodoController::class, 'updateItem']);
+    Route::delete('/todos/{id}/items/{itemId}', [TodoController::class, 'destroyItem']);
+    Route::apiResource('todos', TodoController::class)->except(['update']);
+    Route::patch('/todos/{id}', [TodoController::class, 'update']);
+    Route::apiResource('todo-lists', TodoListController::class)->except(['update']);
+    Route::patch('/todo-lists/{id}', [TodoListController::class, 'update']);
 
     // Experiment routes
     Route::get('/experiments/suggestions', [ExperimentController::class, 'suggestions']);

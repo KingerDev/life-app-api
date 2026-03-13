@@ -72,4 +72,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Habit::class);
     }
+
+    public function todos()
+    {
+        return $this->hasMany(Todo::class);
+    }
+
+    public function todoLists()
+    {
+        return $this->hasMany(TodoList::class);
+    }
 }
