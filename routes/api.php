@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\Api\AssessmentController;
+use App\Http\Controllers\Api\NotificationPreferenceController;
 use App\Http\Controllers\Api\BeliefController;
 use App\Http\Controllers\Api\ExperimentController;
 use App\Http\Controllers\Api\HabitController;
+use App\Http\Controllers\Api\NoteController;
 use App\Http\Controllers\Api\QuestController;
 use App\Http\Controllers\Api\TodoController;
 use App\Http\Controllers\Api\TodoListController;
@@ -55,6 +57,13 @@ Route::middleware(ClerkAuth::class)->group(function () {
     Route::patch('/todos/{id}', [TodoController::class, 'update']);
     Route::apiResource('todo-lists', TodoListController::class)->except(['update']);
     Route::patch('/todo-lists/{id}', [TodoListController::class, 'update']);
+
+    // Note routes
+    Route::apiResource('notes', NoteController::class);
+
+    // Notification preferences
+    Route::get('/notification-preferences', [NotificationPreferenceController::class, 'show']);
+    Route::patch('/notification-preferences', [NotificationPreferenceController::class, 'update']);
 
     // Experiment routes
     Route::get('/experiments/suggestions', [ExperimentController::class, 'suggestions']);
