@@ -41,6 +41,10 @@ class TodoController extends Controller
             $query->where('list_id', $request->input('list_id'));
         }
 
+        if ($request->has('aspect_id')) {
+            $query->where('aspect_id', $request->input('aspect_id'));
+        }
+
         $todos = $query->paginate(30);
 
         return response()->json([
